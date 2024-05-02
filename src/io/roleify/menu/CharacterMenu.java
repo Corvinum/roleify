@@ -12,7 +12,7 @@ public class CharacterMenu extends AbstractMenu{
         System.out.println("2.Galeria de personajes");
         System.out.println("0.Salir");
         System.out.print("INPUT: ");
-        int option = InputHandler;
+
         switch (option){
             case 1: CharacterCreator characterCreator = new CharacterCreator();
                 characterCreator.start();
