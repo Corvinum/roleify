@@ -1,12 +1,36 @@
 package io.roleify.creator;
 
+import io.roleify.character.Character;
+import io.roleify.character.CharacterDatabase;
+import io.roleify.utility.Colorator;
 import io.roleify.utility.InputHandler;
 
 public class CharacterCreator {
-    //DEFAULT CONSTRUCTOR BY COMPILER
+    //CONSTRUCTOR POR DEFECTO
 
-    public void start(){
-        System.out.println("Introduzca el nombre de su personaje:");
-        String characterName = InputHandler.readLine();
-    };
+    public void createCharacter(){
+        System.out.println("--------------------------------------------------------------------------------------------");
+        Colorator.titleMessage("CREAR PERSONAJE");
+
+        System.out.print("Introduzca el nombre de su personaje: ");
+        String name = InputHandler.readString();
+
+        //Sanitizando
+        name = name.trim();
+
+        if (name.isEmpty()){
+            Colorator.redMessage("ERROR: No puedes tener un nombre vacío :(");
+        } else {
+            System.out.print("Introduzca la descripción del personaje: ");
+            String description = InputHandler.readString();
+
+            //Sanitizando
+            description = description.trim();
+
+            System.out.println("--------------------------------------------------------------------------------------------");
+            Colorator.greenMessage("Personaje creado con exito :)");
+            CharacterDatabase.addCharacter(new Character(name, description));
+        }
+
+    }
 }

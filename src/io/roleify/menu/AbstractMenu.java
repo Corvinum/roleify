@@ -1,9 +1,13 @@
 package io.roleify.menu;
 
+import java.util.Scanner;
+
 public abstract class AbstractMenu {
 
-    //ATTRIB
+    //Atributo que almacena la opción
     int option;
 
-    public abstract void start();
+    Scanner reader;
+
+    public abstract void display();
 }

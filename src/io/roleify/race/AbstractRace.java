@@ -1,4 +1,4 @@
-package io.roleify.races;
+package io.roleify.race;
 
 public abstract class AbstractRace {
     //ATTRIBS
@@ -11,6 +11,7 @@ public abstract class AbstractRace {
     protected AbstractRace(String nameRace) {
         this.nameRace = nameRace;
     }
+
     //SETTER
     protected void setNameRace(String nameRace){
         this.nameRace = nameRace;
