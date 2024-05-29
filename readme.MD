@@ -8,14 +8,15 @@ Actualmente se encarga de guardar personajes.
 - Menu principal con distintos submenus.
 - Control de errores
 - Coloreador de mensajes
+- Exportador
 - Una base de datos(entre comillas)
   - Gestión
     - Personaje.
+    - Bestias
+    - Objetos
       - Creación.
       - Galería.
       - Modificación.
       - Eliminación.
 ## Proxima actualización
-- Nuevas objetos a poder gestionar: Bestias. objetos y escenarios.
-- Exportación. 
 - Importación(conllevaría a crear una especie de compilador sencillo).

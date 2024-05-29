@@ -1,32 +1,32 @@
 package io.roleify.remover;
 
-import io.roleify.character.CharacterDatabase;
+import io.roleify.beast.BeastDatabase;
 import io.roleify.utility.Colorator;
 import io.roleify.utility.InputHandler;
 
-public class CharacterRemover {
+public class BeastRemover {
     //DEFAULT CONSTRUCTOR BY COMPILER
 
-    public void removeCharacter(){
+    public void removeBeast(){
         System.out.println("--------------------------------------------------------------------------------------------");
-        if (CharacterDatabase.isEmpty()){
-            Colorator.redMessage("ERROR: ¡No tienes personajes!");
+        if (BeastDatabase.isEmpty()){
+            Colorator.redMessage("ERROR: ¡No tienes bestias!");
         }else {
-            Colorator.titleMessage("MODIFICAR PERSONAJE");
-            System.out.print("Introduzca el ID del personaje a borrar: ");
+            Colorator.titleMessage("MODIFICAR BESTIA");
+            System.out.print("Introduzca el ID de la bestia a eliminar: ");
             int id = InputHandler.readInt();
             boolean check = false;
             try {
-                CharacterDatabase.getCharacter(id);
+                BeastDatabase.getBeast(id);
                 check = true;
             }catch (IndexOutOfBoundsException e){
                 System.out.println("--------------------------------------------------------------------------------------------");
-                Colorator.redMessage("ERROR: Ese ID de personaje no existe :(");
+                Colorator.redMessage("ERROR: Ese ID de bestia no existe :(");
             } finally {
                 if (check) {
                     System.out.println("--------------------------------------------------------------------------------------------");
-                    System.out.println("Personaje seleccionado a ELIMINAR:");
-                    System.out.println(CharacterDatabase.getCharacter(id));
+                    System.out.println("Bestia seleccionada a ELIMINAR:");
+                    System.out.println(BeastDatabase.getBeast(id));
 
                     //Confirmación
                     Colorator.yellowMessage(" (S) para confirmar o cualquier otro caracter para cancelar.");
@@ -35,9 +35,9 @@ public class CharacterRemover {
                     String dec = InputHandler.readString().trim().toLowerCase();
 
                     if (dec.equals("s")) {
-                        CharacterDatabase.removeCharacter(id);
+                        BeastDatabase.removeBeast(id);
                         System.out.println("--------------------------------------------------------------------------------------------");
-                        Colorator.greenMessage("¡PERSONAJE ELIMINADO!");
+                        Colorator.greenMessage("¡BESTIA ELIMINADO!");
                     } else {
                         Colorator.redMessage("Eliminación cancelada");
                     }

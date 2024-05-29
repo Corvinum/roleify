@@ -1,13 +1,13 @@
 package io.roleify.menu;
 
-import io.roleify.character.CharacterDatabase;
-import io.roleify.creator.CharacterCreator;
-import io.roleify.gallery.CharacterGallery;
-import io.roleify.modifier.CharacterModifier;
-import io.roleify.remover.CharacterRemover;
-import io.roleify.utility.*;
+import io.roleify.creator.ItemCreator;
+import io.roleify.gallery.ItemGallery;
+import io.roleify.modifier.ItemModifier;
+import io.roleify.remover.ItemRemover;
+import io.roleify.utility.Colorator;
+import io.roleify.utility.InputHandler;
 
-public class CharacterMenu extends AbstractMenu{
+public class ItemMenu extends AbstractMenu{
 
     @Override
     public void display() {
@@ -15,13 +15,13 @@ public class CharacterMenu extends AbstractMenu{
         do {
             //Separador
             System.out.println("--------------------------------------------------------------------------------------------");
-            Colorator.titleMessage("MENU DE PERSONAJES");
+            Colorator.titleMessage("MENU DE OBJETOS");
 
             System.out.println("Por favor, selecciona la sección a la que quieras ir introduciendo el numero correspondiente: ");
-            System.out.println("1. Creación de personaje:");
-            System.out.println("2. Galeria de personajes");
-            System.out.println("3. Modificación de personajes");
-            System.out.println("4. Eliminación de personajes");
+            System.out.println("1. Creación de objetos:");
+            System.out.println("2. Galeria de objetos");
+            System.out.println("3. Modificación de objetos");
+            System.out.println("4. Eliminación de objetos");
             System.out.println("0. Salir");
             System.out.print("INPUT: ");
 
@@ -31,19 +31,19 @@ public class CharacterMenu extends AbstractMenu{
             //LOGICA DE LA OPCIÓN SELECCIONADA
             switch (option) {
                 case 1:
-                    CharacterCreator characterCreator = new CharacterCreator();
-                    characterCreator.createCharacter();
+                    ItemCreator itemCreator = new ItemCreator();
+                    itemCreator.createItem();
                     break;
                 case 2:
-                    CharacterGallery.printCharacters();
+                    ItemGallery.printItems();
                     break;
                 case 3:
-                    CharacterModifier characterModifier = new CharacterModifier();
-                    characterModifier.modifyCharacter();
+                    ItemModifier itemModifier = new ItemModifier();
+                    itemModifier.modifyItem();
                     break;
                 case 4:
-                    CharacterRemover characterRemover = new CharacterRemover();
-                    characterRemover.removeCharacter();
+                    ItemRemover itemRemover = new ItemRemover();
+                    itemRemover.removeItem();
                     break;
                 case 0:
                     System.out.println("--------------------------------------------------------------------------------------------");
